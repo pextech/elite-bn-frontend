@@ -1,6 +1,4 @@
-import {
-  INCREMENT, DECREMENT, ADD, SUBTRACT,
-} from '../../constants/actions';
+import { INCREMENT, DECREMENT, ADD, SUBTRACT } from '../../constants/actions';
 import { counterInitialState } from '../initialState';
 import updateObject from '../utility';
 

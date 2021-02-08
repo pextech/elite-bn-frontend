@@ -53,6 +53,7 @@ module.exports = {
     contentBase: (`${__dirname}/dist`),
     hot: true,
     port: process.env.PORT,
+    historyApiFallback: true,
   },
   mode: 'production',
     performance: {
@@ -61,5 +62,3 @@ module.exports = {
         maxAssetSize: 512000
     }
 };
-
-

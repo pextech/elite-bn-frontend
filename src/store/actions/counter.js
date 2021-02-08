@@ -1,6 +1,4 @@
-import {
-  ADD, DECREMENT, INCREMENT, SUBTRACT,
-} from '../../constants/actions';
+import { ADD, DECREMENT, INCREMENT, SUBTRACT } from '../../constants/actions';
 
 export const increment = () => ({
   type: INCREMENT,
