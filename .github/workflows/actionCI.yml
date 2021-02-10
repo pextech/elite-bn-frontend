@@ -2,13 +2,12 @@ name: CI/CD
 
 on:
   push:
-    branches: [ develop ]
+    branches: [develop]
   pull_request:
-    branches: [ develop ]
+    branches: [develop]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -17,25 +16,25 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: npm install
-    - name: Run the tests and generate coverage report
-      run: npm test -- --coverage
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-      
-    - uses: paambaati/codeclimate-action@v2.7.2
-      env:
-        CC_TEST_REPORTER_ID: 3c27b6706910686246417c9500e80a8a463bbc7dd3b73fdc1cb5a229051d94e3
-      with:
-        coverageCommand: npm run test:coverage
-        debug: true
-    - name: Build
-      run: npm run build
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
+      - name: Run the tests and generate coverage report
+        run: npm test -- --coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - uses: paambaati/codeclimate-action@v2.7.2
+        env:
+          CC_TEST_REPORTER_ID: 3c27b6706910686246417c9500e80a8a463bbc7dd3b73fdc1cb5a229051d94e3
+        with:
+          coverageCommand: npm run test:coverage
+          debug: true
+      - name: Build
+        run: npm run build

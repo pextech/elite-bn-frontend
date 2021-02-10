@@ -6,6 +6,7 @@ import counterReducer from './reducers/counter';
 const rootReducer = combineReducers({
   ctr: counterReducer,
 });
+
 const logger = () => (next) => (action) => {
   const result = next(action);
   return result;

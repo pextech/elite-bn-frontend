@@ -50,15 +50,15 @@ module.exports = {
   ],
 
   devServer: {
-    contentBase: (`${__dirname}/dist`),
+    contentBase: `${__dirname}/dist`,
     hot: true,
     port: process.env.PORT,
     historyApiFallback: true,
   },
   mode: 'production',
-    performance: {
-        hints: false,
-        maxEntrypointSize: 512000,
-        maxAssetSize: 512000
-    }
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
 };
