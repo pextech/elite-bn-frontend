@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer1 = () => (
-  <div>
+  <div className=" bg-white">
     <div className="md:flex justify-between md:pt-20 pt-10 px-5 md:px-20">
       <div className="flex pb-10">
         <ul className="pr-20 flex flex-col items-between">

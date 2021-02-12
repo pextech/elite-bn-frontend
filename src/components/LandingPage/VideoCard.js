@@ -28,17 +28,18 @@ const VideoCard = () => {
           </p>
 
           <div className=" items-center bg-purple-900  md:px-20 px-5 rounded-xl  ">
-            {loading && <VideoSkeleton />}
-            {!loading && (
-              <div className="md:py-20 py-5">
+            <div className="md:py-20 py-5">
+              {loading && <VideoSkeleton />}
+              {!loading && (
                 <ReactPlayer
                   width="100%"
                   height="300px"
                   controls
                   url="https://www.youtube.com/watch?v=6cq5Dc-sjOw"
                 />
-              </div>
-            )}
+              )}
+            </div>
+
             <div className="mt-3">
               <p className="md:text-2xl text-xl text-gray-100  text-center">
                 Because your business and dreams deserve the best Access for just a click:

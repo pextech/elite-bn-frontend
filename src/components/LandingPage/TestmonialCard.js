@@ -4,7 +4,7 @@ import JaneDoe from '../../images/JaneDoe.png';
 
 function CartTestmonials() {
   return (
-    <div className="shadow-lg bg-gray-100  flex flex-col justify-around items-center mb-10 md:mb-0">
+    <div className="shadow-lg bg-white  flex flex-col justify-around items-center mb-10 md:mb-0">
       <div className="w-2/4  px-4 pt-5">
         <img
           src={JaneDoe}
@@ -18,11 +18,10 @@ function CartTestmonials() {
       </div>
       <div className="flex justify-between">
         <p className="px-10 py-5 text-center">
-          An endorsement is typically a well-known in An endorsement is
-          typically a well-known influencer giving their public support for a
-          brand An endorsement is typically a well-known influencer giving their
-          public support for a brandfluencer giving their public support for a
-          brand
+          An endorsement is typically a well-known in An endorsement is typically a well-known
+          influencer giving their public support for a brand An endorsement is typically a
+          well-known influencer giving their public support for a brandfluencer giving their public
+          support for a brand
         </p>
       </div>
       <div className="pb-5 text-blue-600 ">

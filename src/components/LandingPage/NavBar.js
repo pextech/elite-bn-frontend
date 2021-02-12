@@ -5,10 +5,10 @@ const NavBar = ({ toggle }) => (
   <div className="bg-test1 md:px-20   px-5 p-2 h-20 md:p-5">
     <nav className="flex justify-between">
       <div className="flex ">
-        <h1 className="text-gray-100 border-b-2 text-xl">
+        <Link to="/#" className="text-gray-100 border-b-2 text-xl">
           <span className="md:text-2xl font-bold">B</span>
           arefoot-Nomad
-        </h1>
+        </Link>
       </div>
 
       <i id="bugger" className="fas fa-bars md:hidden text-xl cursor-pointer" onClick={toggle} />
