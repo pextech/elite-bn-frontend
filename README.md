@@ -10,6 +10,16 @@
 
 Make company global travel and accommodation easy and convenient for the strong workforce of savvy members of staff, by leveraging the modern web.
 
+## How to get access to the Docker Container/Image
+
+- Go on [Dockerhub](https://hub.docker.com/) website, if you don't have an account, you will be asked to create one
+
+- The image is accessible on this link `https://hub.docker.com/repository/docker/pextech/elite-barefoot`
+
+- To run the image locally run the following command to pull the image  `docker push pextech/elite-barefoot:frontend`
+
+- to start the image run `docker run -it -p 8080:80 --name barefootnginxapp elite-barefoot/frontend`
+
 # Dependencies ⚙︎
 
 - React js
