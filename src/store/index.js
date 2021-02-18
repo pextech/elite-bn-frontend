@@ -1,12 +1,12 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import counterReducer from './reducers/counter';
+
+import authReducer from './reducers/auth';
 
 const rootReducer = combineReducers({
-  ctr: counterReducer,
+  auth: authReducer,
 });
-
 const logger = () => (next) => (action) => {
   const result = next(action);
   return result;

@@ -1,0 +1,13 @@
+.Auth {
+    margin: 12px auto;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.Auth input {
+    color: rgb(75 85 99);
+}

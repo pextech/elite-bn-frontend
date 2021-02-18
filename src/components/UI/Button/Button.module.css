@@ -1,0 +1,56 @@
+.Button {
+    display: flex;
+    box-sizing: border-box;
+    outline: none;
+    font: inherit;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    margin-top: 32px;
+    font-weight: 400;
+    background-color: #495AF1;
+    padding: 6px 10px;
+    margin: 24px auto;
+    justify-content: center;
+    border-radius: 5px;
+}
+.Button:focus {
+    outline: none;
+}
+
+.Button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.Success {
+    color: white;
+    grid-column: 1/3;
+    width: 70%;
+}
+
+.Danger {
+    color: #944317;
+}
+
+.GoogleSignup {
+    background-color: white;
+    border: 2px solid #495AF1;
+    color: black;
+    width: 70%;
+}
+
+
+.fbSignup {
+    background-color: #495AF1;
+    border: none;
+    color: white;
+    width: 70%
+}
+
+@media screen and (max-width: 768px) {
+    .Button {
+        width: 100%;
+    }
+  }

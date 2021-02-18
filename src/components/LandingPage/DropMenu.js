@@ -12,7 +12,7 @@ const DropMenu = ({ isOpen, toggle }) => (
           Login
         </Link>
       </div>
-      <div className="text-gray-50 flex justify-center text-down pb-5">
+      <div data-testid="drop-down" className="text-gray-50 flex justify-center text-down pb-5">
         <i className="fas fa-globe pt-1" />
         <p className="px-2">English</p>
         <i className="fas fa-angle-down" />

@@ -5,6 +5,8 @@ const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
   output: {
@@ -28,6 +30,27 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        exclude: /\.module.css$/,
+      },
+      {
+        test: /\.module.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              sourceMap: isDevelopment,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: isDevelopment,
+            },
+          },
+        ],
       },
       {
         test: /\.(gif|svg|jpg|png)$/,
@@ -38,6 +61,7 @@ module.exports = {
   plugins: [
     new Dotenv(),
     new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'styles.css',

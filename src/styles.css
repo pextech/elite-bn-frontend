@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.card {
+  @apply bg-secondary rounded-md md:rounded-lg overflow-hidden shadow-sm;
+}

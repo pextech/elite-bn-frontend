@@ -1,1 +1,1 @@
-export { add, subtract, increment, decrement } from './counter';
+export { auth, authStart, authFail, authSuccess } from './auth';
