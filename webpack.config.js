@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -62,6 +63,7 @@ module.exports = {
     new Dotenv(),
     new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(),
+    new NodePolyfillPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'styles.css',
