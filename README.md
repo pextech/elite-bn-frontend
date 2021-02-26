@@ -4,11 +4,15 @@
 ![Node.js CI](https://github.com/atlp-rwanda/elite-bn-frontend/workflows/Action%20CI/badge.svg)  [![Maintainability](https://api.codeclimate.com/v1/badges/3c16f080732707287cb9/maintainability)](https://codeclimate.com/github/atlp-rwanda/elite-bn-frontend/maintainability)  [![Test Coverage](https://api.codeclimate.com/v1/badges/3c16f080732707287cb9/test_coverage)](https://codeclimate.com/github/atlp-rwanda/elite-bn-frontend/test_coverage)
 
 
-![Design preview for the Barefoot Nomad web Platform](barefoot.png)
+![Design preview for the Barefoot Nomad web Platform](UI.png)
 
 ## Description
 
 Make company global travel and accommodation easy and convenient for the strong workforce of savvy members of staff, by leveraging the modern web.
+
+## hosted version of the application
+
+If you want to have a look on the hosted version of the app click **[HERE](https://pextech.github.io/elite-bn-frontend/)**
 
 ## How to get access to the Docker Container/Image
 
