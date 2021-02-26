@@ -12,7 +12,7 @@ Make company global travel and accommodation easy and convenient for the strong 
 
 ## hosted version of the application
 
-If you want to have a look on the hosted version of the app click **[HERE](https://pextech.github.io/elite-bn-frontend/)**
+If you want to have a look on the hosted version of the app click **[HERE](https://naughty-mirzakhani-b9436a.netlify.app/)**
 
 ## How to get access to the Docker Container/Image
 
