@@ -59,7 +59,3 @@ To start the application in production mode run the command below
 
 > `npm start`
 
-
-# Authors
-
-team Elite &copy;2021.
