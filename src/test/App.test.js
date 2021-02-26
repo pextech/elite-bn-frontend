@@ -1,35 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from '../Routes/index';
+
 import App from '../App';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import store from '../store';
+import Index from '../components/Home';
 
 describe('rendering components', () => {
-  xit('renders app components', () => {
-    shallow(<App />);
-  });
-  xit('renders header', () => {
-    const wrapper = shallow(
-      <Provider store={store}>
-        <BrowserRouter>
-          {' '}
-          <App />
-        </BrowserRouter>
-      </Provider>
+  it('renders app components', () => {
+    shallow(
+      <Router>
+        <div className="App bg-gray-100">
+          <Routes />
+        </div>
+      </Router>,
     );
-    const div = (
-      <div className="text-center">
-        <h2 className="m-6">
-          Welcome to Our Very beginning of this Barefoot Front-end Implementation
-        </h2>
-      </div>
-    );
-    const header = (
-      <h2 className="m-6">
-        Welcome to Our Very beginning of this Barefoot Front-end Implementation
-      </h2>
-    );
-    expect(wrapper.contains(header)).toEqual(false);
   });
 });

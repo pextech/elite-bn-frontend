@@ -1,3 +1,16 @@
-export { auth, authStart, authFail, authSuccess } from './auth';
+export {
+  auth, authStart, authFail, authSuccess,
+} from './auth';
+// export {
+//   add,
+//   subtract,
+//   increment,
+//   decrement,
+// } from './counter';
 
-export { logoutSuccess, logoutFailed, logoutRequest } from './LogoutAction';
+export {
+  reset,
+  change,
+} from './resetPassword';
+
+export { logoutSuccess, logoutFailed } from './LogoutAction';

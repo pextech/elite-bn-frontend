@@ -24,7 +24,7 @@ export const auth = (firstName, lastName, email, password) => (dispatch) => {
     email,
     password,
   };
-  const url = 'https://elite-barefoot-api.herokuapp.com/api/v1/users/signup';
+  const url = 'https://elite-staging.herokuapp.com/api/v1/users/signup';
   axios
     .post(url, authData)
     .then((response) => {

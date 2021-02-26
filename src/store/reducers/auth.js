@@ -5,20 +5,18 @@ import { authInitialState } from '../initialState';
 
 const authStart = (state, action) => updateObject(state, { error: null, loading: true });
 
-const authSuccess = (state, action) =>
-  updateObject(state, {
-    token: action.idToken,
-    userId: action.userId,
-    error: null,
-    loading: false,
-    message: action.authData.message,
-  });
+const authSuccess = (state, action) => updateObject(state, {
+  token: action.idToken,
+  userId: action.userId,
+  error: null,
+  loading: false,
+  message: action.authData.message,
+});
 
-const authFail = (state, action) =>
-  updateObject(state, {
-    error: action.error,
-    loading: false,
-  });
+const authFail = (state, action) => updateObject(state, {
+  error: action.error,
+  loading: false,
+});
 
 const reducer = (state = authInitialState, action) => {
   switch (action.type) {

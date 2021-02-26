@@ -1,5 +1,6 @@
 import React from 'react';
 import { jest } from '@jest/globals';
+import axios from 'axios';
 import { shallow, mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -8,10 +9,12 @@ import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import { render, fireEvent, act } from '@testing-library/react';
-import rootReducer from '../store';
+import rootReducer from '../../store';
 import '@testing-library/jest-dom/extend-expect';
 
-import Login from '../components/Login';
+import ResetPassword from '../../components/ResetPassword/ResetPassword';
+
+jest.mock('axios');
 
 // Enzyme.configure({ adapter: new Adapter() });
 
@@ -36,7 +39,7 @@ beforeEach(() => {
     error: null,
     loading: false,
     message: null,
-    ChangePassword: jest.fn(),
+    resetPassword: jest.fn(),
   };
 
   testStore = (state) => {
@@ -47,18 +50,18 @@ beforeEach(() => {
   const store = mockStore({});
   const wrapper = shallow(
     <Provider store={store}>
-      <Login />
+      <ResetPassword />
     </Provider>,
   );
 });
 describe('ResetPassword page Components', () => {
-  xit(' contains input', () => {
+  it(' contains input', () => {
     jest.useFakeTimers();
     act(() => {
       render(
         <Router>
           <Provider store={store1}>
-            <Login />
+            <ResetPassword />
           </Provider>
         </Router>,
 
@@ -70,26 +73,26 @@ describe('ResetPassword page Components', () => {
     const { getByTestId } = render(
       <Router>
         <Provider store={store1}>
-          <Login />
+          <ResetPassword />
         </Provider>
       </Router>,
 
     );
     const input = getByTestId('input');
 
-    expect(input.children.length).toBe(1);
+    expect(input.children.length).toBe(0);
 
     jest.useRealTimers();
 
     // expect(setTimeout).toHaveBeenCalledTimes(1);
   });
-  xit('submit inputted element', () => {
+  it('submit inputted element', () => {
     jest.useFakeTimers();
     act(() => {
       render(
         <Router>
           <Provider store={store1}>
-            <Login />
+            <ResetPassword />
           </Provider>
         </Router>,
 
@@ -102,27 +105,22 @@ describe('ResetPassword page Components', () => {
     const { getByPlaceholderText } = render(
       <Router>
         <Provider store={store1}>
-          <Login />
+          <ResetPassword />
         </Provider>
       </Router>,
 
     );
-    const Firstnode = getByPlaceholderText('Enter your email');
+    const node = getByPlaceholderText('Your email');
 
-    fireEvent.change(Firstnode, { target: { value: 'pextech@gmail.com' } });
-
-    const SecNode = getByPlaceholderText('Enter your password');
-
-    fireEvent.change(SecNode, { target: { value: 'Mc1639_1639' } });
-
+    fireEvent.change(node, { target: { value: 'mcstain1639@gmail.com' } });
     const { getByText } = render(
       <Router>
         <Provider store={store1}>
-          <Login />
+          <ResetPassword />
         </Provider>
       </Router>,
     );
-    const node2 = getByText('Login');
+    const node2 = getByText('Reset your password');
     fireEvent.click(node2);
   });
 });

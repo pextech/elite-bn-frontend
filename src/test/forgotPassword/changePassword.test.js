@@ -8,10 +8,10 @@ import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import { render, fireEvent, act } from '@testing-library/react';
-import rootReducer from '../store';
+import rootReducer from '../../store';
 import '@testing-library/jest-dom/extend-expect';
 
-import Login from '../components/Login';
+import ChangePassword from '../../components/ResetPassword/ChangePassword';
 
 // Enzyme.configure({ adapter: new Adapter() });
 
@@ -47,18 +47,18 @@ beforeEach(() => {
   const store = mockStore({});
   const wrapper = shallow(
     <Provider store={store}>
-      <Login />
+      <ChangePassword />
     </Provider>,
   );
 });
 describe('ResetPassword page Components', () => {
-  xit(' contains input', () => {
+  it(' contains input', () => {
     jest.useFakeTimers();
     act(() => {
       render(
         <Router>
           <Provider store={store1}>
-            <Login />
+            <ChangePassword />
           </Provider>
         </Router>,
 
@@ -70,26 +70,26 @@ describe('ResetPassword page Components', () => {
     const { getByTestId } = render(
       <Router>
         <Provider store={store1}>
-          <Login />
+          <ChangePassword />
         </Provider>
       </Router>,
 
     );
     const input = getByTestId('input');
 
-    expect(input.children.length).toBe(1);
+    expect(input.children.length).toBe(0);
 
     jest.useRealTimers();
 
     // expect(setTimeout).toHaveBeenCalledTimes(1);
   });
-  xit('submit inputted element', () => {
+  it('submit inputted element', () => {
     jest.useFakeTimers();
     act(() => {
       render(
         <Router>
           <Provider store={store1}>
-            <Login />
+            <ChangePassword />
           </Provider>
         </Router>,
 
@@ -102,27 +102,27 @@ describe('ResetPassword page Components', () => {
     const { getByPlaceholderText } = render(
       <Router>
         <Provider store={store1}>
-          <Login />
+          <ChangePassword />
         </Provider>
       </Router>,
 
     );
-    const Firstnode = getByPlaceholderText('Enter your email');
+    const Firstnode = getByPlaceholderText('New password');
 
-    fireEvent.change(Firstnode, { target: { value: 'pextech@gmail.com' } });
+    fireEvent.change(Firstnode, { target: { value: '123456' } });
 
-    const SecNode = getByPlaceholderText('Enter your password');
+    const SecNode = getByPlaceholderText('Comfirm password');
 
-    fireEvent.change(SecNode, { target: { value: 'Mc1639_1639' } });
+    fireEvent.change(SecNode, { target: { value: '123456' } });
 
     const { getByText } = render(
       <Router>
         <Provider store={store1}>
-          <Login />
+          <ChangePassword />
         </Provider>
       </Router>,
     );
-    const node2 = getByText('Login');
+    const node2 = getByText('Reset your password');
     fireEvent.click(node2);
   });
 });

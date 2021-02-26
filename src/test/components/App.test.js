@@ -1,9 +1,19 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from '../../App';
+import { shallow } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from '../../Routes';
 
-describe('Home Page', () => {
-  it('renders Home components', () => {
-    render(<App />);
+import App from '../../App';
+import Index from '../../components/Home';
+
+describe('rendering components', () => {
+  it('renders app components', () => {
+    shallow(
+      <Router>
+        <div className="App bg-gray-100">
+          <Routes />
+        </div>
+      </Router>,
+    );
   });
 });

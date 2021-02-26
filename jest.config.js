@@ -20,13 +20,4 @@ module.exports = {
     '\\.(css|less|scss)$': '<rootDir>/__mocks__/styleMock.js',
   },
 
-  coverageThreshold: {
-    global: {
-      branches: 60,
-      functions: 60,
-      lines: 60,
-      statements: 60,
-    },
-  },
-  coverageReporters: ['json', 'lcovonly', 'text', 'clover'],
 };

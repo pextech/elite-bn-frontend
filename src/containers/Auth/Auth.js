@@ -37,7 +37,9 @@ const Auth = (props) => {
       </Button>
     );
   }
-  const { register, handleSubmit, errors, reset } = useForm();
+  const {
+    register, handleSubmit, errors, reset,
+  } = useForm();
 
   const onSubmit = async (data) => {
     await props.onAuth(data.firstName, data.lastName, data.email, data.password);
@@ -146,7 +148,8 @@ const Auth = (props) => {
               <SocialSignin />
 
               <p>
-                Already have an account?{' '}
+                Already have an account?
+                {' '}
                 <a className="text-blue-500 text-sm font-medium" href="/login">
                   Sign in
                 </a>
@@ -174,8 +177,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onAuth: (firstName, lastName, email, password) =>
-    dispatch(auth(firstName, lastName, email, password)),
+  // eslint-disable-next-line max-len
+  onAuth: (firstName, lastName, email, password) => dispatch(auth(firstName, lastName, email, password)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);

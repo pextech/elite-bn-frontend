@@ -30,13 +30,13 @@ export default function login() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoaded(true);
-    }, 1000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleInput = (e) => {
-    const value = e.target.value;
+    const { value } = e.target;
     setState({
       ...state,
       [e.target.name]: value,
@@ -73,6 +73,7 @@ export default function login() {
                     <div className="py-6">
                       <div className="">
                         <TextField
+                          data-testid="input"
                           isLoaded={loaded}
                           name="email"
                           id="Email"
@@ -83,6 +84,7 @@ export default function login() {
                       </div>
                       <div className="">
                         <TextField
+                          data-testid="input"
                           isLoaded={loaded}
                           id="Password"
                           name="password"
@@ -105,7 +107,7 @@ export default function login() {
                         </button>
                       )}
                     </div>
-                    <div className="flex px-8 justify-end text-purple-600 py-6 text-sm hover:text-purple-700 hover:underline hover:cursor-pointer mb-6">
+                    <div className="flex px-8 justify-end text-primary-100 py-6 text-sm hover:text-purple-700 hover:underline hover:cursor-pointer mb-6">
                       <Link to="/reset-password">Forgot password</Link>
                     </div>
                     <div className="space-y-6">

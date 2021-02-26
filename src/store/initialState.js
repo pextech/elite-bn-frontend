@@ -5,3 +5,15 @@ export const authInitialState = {
   loading: false,
   message: null,
 };
+
+export const resetInitialState = {
+  email: '',
+  token: null,
+  error: null,
+  loading: false,
+  message: null,
+};
+
+export const changeInitialState = {
+  password: '',
+};

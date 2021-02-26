@@ -4,8 +4,7 @@ import setAuthorizationToken from '../../utils/setAuthorization';
 import { LOGIN_SUCCESS } from '../actions/ActionTypes';
 
 const handle = async (state, history, dispatch) => {
-  axios
-    .post('https://elite-staging.herokuapp.com/api/v1/users/signin', state)
+  axios.post('https://elite-staging.herokuapp.com/api/v1/users/signin', state)
     .then((response) => {
       const { token } = response.data.data;
       const { data } = response.data;
